@@ -38,4 +38,12 @@ public class UserServiceImpl implements UserService {
 		return mapper.findMany();
 	}
 
+	/**
+	 *ユーザを一件取得します。
+	 */
+	@Override
+	public MUser getUserOne(String userId) {
+		return mapper.findOne(userId);
+	}
+
 }

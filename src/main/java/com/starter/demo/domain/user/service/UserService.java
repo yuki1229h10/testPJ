@@ -22,4 +22,11 @@ public interface UserService {
 	 * @return ユーザのリストを返します。
 	 */
 	public List<MUser> getUsers();
+
+	/**
+	 * ユーザを一件取得します。
+	 * @param userId ユーザid
+	 * @return ユーザidで指定したユーザを返します。
+	 */
+	public MUser getUserOne(String userId);
 }

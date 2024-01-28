@@ -3,6 +3,7 @@ package com.starter.demo.repository;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.starter.demo.domain.user.model.MUser;
 
@@ -33,4 +34,20 @@ public interface UserMapper {
 	 * @return 指定されたユーザidに対応するユーザ情報を返します。
 	 */
 	public MUser findOne(String userId);
+
+	/**
+	 * ユーザ情報を更新します。
+	 * @param userId ユーザid
+	 * @param password パスワード
+	 * @param userName ユーザ名
+	 */
+	public void updateOne(@Param("userId") String userId, @Param("password") String password,
+			@Param("userName") String userName);
+
+	/**
+	 * 指定されたユーザidに対応するユーザをデータベースから削除します。
+	 * @param userId 削除対象のユーザid
+	 * @return 削除が成功した場合は1を返し、それ以外の場合は0を返します。
+	 */
+	public int deleteOne(@Param("userId") String userId);
 }
