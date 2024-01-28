@@ -37,9 +37,7 @@ public interface UserMapper {
 
 	/**
 	 * ユーザ情報を更新します。
-	 * @param userId ユーザid
-	 * @param password パスワード
-	 * @param userName ユーザ名
+	 * @param user ユーザ情報
 	 */
 	public void updateOne(@Param("userId") String userId, @Param("password") String password,
 			@Param("userName") String userName);

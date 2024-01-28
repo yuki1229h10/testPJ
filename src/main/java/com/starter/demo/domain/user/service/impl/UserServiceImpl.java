@@ -46,4 +46,20 @@ public class UserServiceImpl implements UserService {
 		return mapper.findOne(userId);
 	}
 
+	/**
+	 *ユーザを更新します。
+	 */
+	@Override
+	public void updateUserOne(String userId, String password, String userName) {
+		mapper.updateOne(userId, password, userName);
+	}
+
+	/**
+	 *ユーザを削除します。
+	 */
+	@Override
+	public void deleteUserOne(String userId) {
+		mapper.deleteOne(userId);
+	}
+
 }

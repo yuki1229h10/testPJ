@@ -6,6 +6,7 @@ import com.starter.demo.domain.user.model.MUser;
 
 /**
  * ユーザサービスのインタフェースです。
+ * 
  * @author Yuki
  *
  */
@@ -29,4 +30,18 @@ public interface UserService {
 	 * @return ユーザidで指定したユーザを返します。
 	 */
 	public MUser getUserOne(String userId);
+
+	/**
+	 * ユーザを更新します。
+	 * @param userId ユーザid
+	 * @param password パスワード
+	 * @param userName ユーザ名
+	 */
+	public void updateUserOne(String userId, String password, String userName);
+
+	/**
+	 * ユーザを削除します。
+	 * @param userId ユーザid
+	 */
+	public void deleteUserOne(String userId);
 }
