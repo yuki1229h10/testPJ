@@ -1,6 +1,7 @@
 package com.starter.demo.domain.user.model;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -22,4 +23,7 @@ public class MUser {
 
 	// 部署
 	private Department department;
+
+	// 給料
+	private List<Salary> salaryList;
 }
