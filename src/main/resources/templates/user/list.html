@@ -14,9 +14,24 @@
 		<div class="header border-bottom">
 			<h1 class="h2">ユーザ一覧画面</h1>
 		</div>
+		<!-- 検索 -->
+		<div class="mb-4">
+			<form id="user-search-form" method="post" th:action="@{/user/list}"
+				class="d-flex gap-2" th:object="${userListForm}">
+				<div class="d-flex flex-fill">
+					<label for="userId">ユーザID</label> <input type="text"
+						class="form-control" th:field="*{userId}" />
+				</div>
+				<div class="d-flex flex-fill">
+					<label for="userName">ユーザ名</label> <input type="text"
+						class="form-control" th:field="*{userName}" />
+				</div>
+				<button class="btn btn-primary" type="submit">検索</button>
+			</form>
+		</div>
 		<!-- 一覧表示 -->
 		<div>
-			<table class="table table-striped table-bordered table-hover">
+			<table th:if="${!#lists.isEmpty(userList)}" class="table table-striped table-bordered table-hover">
 				<thead class="thead-light">
 					<tr>
 						<th class="th-width">ユーザID</th>
@@ -39,6 +54,12 @@
 					</tr>
 				</tbody>
 			</table>
+
+			<!-- ユーザリストが空の場合 -->
+			<div th:if="${#lists.isEmpty(userList)}">
+				<p>ユーザが存在しません。</p>
+			</div>
+
 		</div>
 	</div>
 </body>

@@ -23,6 +23,13 @@ public interface UserMapper {
 	public int insertOne(MUser user);
 
 	/**
+	 * ユーザ検索を行います。
+	 * @param user ユーザ
+	 * @return ユーザリストを返却します。
+	 */
+	public List<MUser> findMany(MUser user);
+
+	/**
 	 * 複数のユーザを検索します。
 	 * @return ユーザのリストを返却します。
 	 */

@@ -19,4 +19,7 @@ public class MUser {
 	private Integer gender;
 	private Integer departmentId;
 	private String role;
+
+	// 部署
+	private Department department;
 }

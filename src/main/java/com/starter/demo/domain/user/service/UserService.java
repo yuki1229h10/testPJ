@@ -19,6 +19,13 @@ public interface UserService {
 	public void signup(MUser user);
 
 	/**
+	 * ユーザ検索を行います。
+	 * @param user ユーザ
+	 * @return ユーザリストを返却します。
+	 */
+	public List<MUser> getUsers(MUser user);
+
+	/**
 	 * ユーザ取得を行います。
 	 * @return ユーザのリストを返します。
 	 */
